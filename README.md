@@ -1,38 +1,49 @@
 ESP32 Smart Door Lock
-This project implements a smart door lock system using an ESP32 board. It supports three methods for access control - password via keypad, fingerprint scanner, and RFID tags.
+Mục lục
+Giới thiệu
+Phần cứng
+Tính năng phần mềm
+Đăng ký
+Xác thực
+Tích hợp MQTT
+Cải tiến
+Giới thiệu
+Đây là dự án thực hiện hệ thống khóa cửa thông minh sử dụng bo mạch phát triển ESP32. Hệ thống hỗ trợ 3 phương thức xác thực gồm mật khẩu qua bàn phím, dấu vân tay và thẻ RFID.
 
-Features
-Register and store passwords
-Enroll fingerprints
-Register RFID tags
-Grant/deny access via keypad password
-Grant/deny access via fingerprint match
-Grant/deny access via registered RFID tag
-Publish access notifications to MQTT broker
-LCD screen for status and notifications
-Components
-ESP32 DevKit Board
-LCD 20x4 I2C display
-Matrix membrane keypad
-Optical fingerprint sensor (GT-521F32)
-MFRC522 RFID reader
-Connected to local WiFi and MQTT broker
-Usage
-On startup, the device allows registration of passwords, fingerprints, and RFID tags. After registrations are complete, it monitors the keypad, fingerprint scanner, and RFID reader to grant/deny access and publish notifications to the MQTT broker.
+Phần cứng
+Vi điều khiển: ESP32 DevKitC V4
+Màn hình LCD: LCD 20x4 kết nối I2C
+Hiển thị trạng thái và thông báo
+Bàn phím: Bàn phím màn hình 4x4
+Nhập mật khẩu đăng ký và xác thực
+Cảm biến vân tay: GT-521F32 quang học
+Đăng ký và nhận dạng vân tay
+Đọc thẻ RFID: MFRC522
+Đăng ký và xác nhận thẻ RFID
+Tính năng phần mềm
+Đăng ký
+Thiết bị cung cấp menu trên màn LCD để:
 
-The LCD screen displays status messages and access notifications.
+Thiết lập mật khẩu 4-6 ký tự qua bàn phím
+Ghi danh vân tay
+Đăng ký thẻ RFID
+Dữ liệu được lưu tạm trong bộ nhớ. Có thể mở rộng lưu vào SPIFFS hoặc EEPROM.
 
-See the code comments for more implementation details.
+Xác thực
+3 task FreeRTOS chạy song song giám sát bàn phím, cảm biến vân tay và đầu đọc RFID.
 
-Libraries Used
-LiquidCrystal I2C
-Adafruit Fingerprint Sensor
-MFRC522 RFID
-Arduino Json
-AsyncMqttClient
-To Do
-Add servo to simulate door lock control
-Save registered data to SPIFFS or EEPROM
-Implement BLE instead of WiFi+MQTT
-3D print enclosure
-Let me know if you have any other questions!
+Khi xác thực thành công sẽ hiển thị "Cho phép truy cập" trên LCD và gửi thông báo lên MQTT. Nếu thất bại hiển thị "Từ chối truy cập".
+
+Tích hợp MQTT
+Thiết bị kết nối MQTT qua WiFi để:
+
+Gửi thông báo mỗi lần xác thực
+Đăng ký mật khẩu, vân tay, thẻ RFID mới
+Có thể mở rộng tích hợp Adafruit IO để đẩy lên dashboard.
+
+Cải tiến
+Lưu trữ dữ liệu đăng ký vào bộ nhớ không mất điện
+Thêm kết nối BLE thay cho WiFi+MQTT
+Thiết kế vỏ bọc bằng máy in 3D
+Điều khiển servo mô phỏng mở khóa cửa
+Hãy góp ý nếu cần bổ sung thông tin gì!
