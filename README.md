@@ -1,4 +1,4 @@
-ESP32 Smart Door Lock\n
+ESP32 Smart Door Lock
 This project implements a smart door lock system using an ESP32 board. It supports three methods for access control - password via keypad, fingerprint scanner, and RFID tags.
 
 Features
