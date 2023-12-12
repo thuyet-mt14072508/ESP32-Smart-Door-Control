@@ -9,9 +9,10 @@
   - [Xác thực]
   - [Tích hợp MQTT]
 - [Cải tiến]
+
 **Giới thiệu**
 
-Đây là dự án thực hiện hệ thống khóa cửa thông minh sử dụng bo mạch phát triển ESP32. Hệ thống hỗ trợ 3 phương thức xác thực gồm mật khẩu qua bàn phím, dấu vân tay và thẻ RFID.
+Đây là dự án thực hiện hệ thống khóa cửa thông minh sử dụng bo mạch ESP32. Hệ thống hỗ trợ 3 phương thức xác thực gồm mật khẩu qua bàn phím, dấu vân tay và thẻ RFID.
 
 **Phần cứng**
 
