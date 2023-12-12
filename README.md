@@ -19,9 +19,9 @@
 - **Vi điều khiển** : ESP32 DevKitC V4
 - **Màn hình LCD** : LCD 20x4 kết nối I2C
   - Hiển thị trạng thái và thông báo
-- **Bàn phím** : Bàn phím màn hình 4x4
+- **Bàn phím** : Bàn phím ma trận 4x4
   - Nhập mật khẩu đăng ký và xác thực
-- **Cảm biến vân tay** : GT-521F32 quang học
+- **Cảm biến vân tay** : AS608 quang học
   - Đăng ký và nhận dạng vân tay
 - **Đọc thẻ RFID** : MFRC522
   - Đăng ký và xác nhận thẻ RFID
